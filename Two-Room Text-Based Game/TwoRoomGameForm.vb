@@ -40,32 +40,41 @@ Public Class TwoRoomGameForm
     End Sub
 
     Private Sub ProcessCommand(command As String)
+
         Select Case command
+
             Case "goto room 2"
+
                 If currentRoom = "Room1" Then
                     currentRoom = "Room2"
                     ResponseTextBox.Text = "You move to Room 2."
                 Else
                     ResponseTextBox.Text = "You're already in Room 2."
                 End If
+
                 UpdateRoomDescription()
 
             Case "goto room 1"
+
                 If currentRoom = "Room2" Then
                     currentRoom = "Room1"
                     ResponseTextBox.Text = "You move to Room 1."
                 Else
                     ResponseTextBox.Text = "You're already in Room 1."
                 End If
+
                 UpdateRoomDescription()
 
             Case "look around"
+
                 UpdateRoomDescription()
 
             Case "help"
+
                 ResponseTextBox.Text = "Try: goto room 1, goto room 2, look around, help, pickup, inventory"
 
             Case "pickup"
+
                 If currentRoom = "Room1" AndAlso Not inventory.Contains(Flamethrower) Then
                     inventory.Add(Flamethrower)
                     ResponseTextBox.Text = $"You pickup the {Flamethrower()}."
@@ -74,6 +83,7 @@ Public Class TwoRoomGameForm
                 End If
 
             Case "inventory"
+
                 If inventory.Count = 0 Then
                     ResponseTextBox.Text = "Your inventory is empty."
                 Else
@@ -81,8 +91,11 @@ Public Class TwoRoomGameForm
                 End If
 
             Case Else
+
                 ResponseTextBox.Text = "I don’t understand that command, but I believe you'll figure it out! 💡"
+
         End Select
+
     End Sub
 
     Private Sub UpdateRoomDescription()
