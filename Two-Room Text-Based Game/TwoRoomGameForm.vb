@@ -16,7 +16,7 @@
 
     Private Sub ProcessCommand(command As String)
         Select Case command
-            Case "go to room2"
+            Case "goto room 2"
                 If currentRoom = "Room1" Then
                     currentRoom = "Room2"
                     ResponseTextBox.Text = "You move to Room 2."
@@ -25,7 +25,7 @@
                 End If
                 UpdateRoomDescription()
 
-            Case "go to room1"
+            Case "goto room 1"
                 If currentRoom = "Room2" Then
                     currentRoom = "Room1"
                     ResponseTextBox.Text = "You move to Room 1."
@@ -38,12 +38,12 @@
                 UpdateRoomDescription()
 
             Case "help"
-                ResponseTextBox.Text = "Try: go to room1, go to room2, look around, help, pickup, inventory"
+                ResponseTextBox.Text = "Try: goto room 1, goto room 2, look around, help, pickup, inventory"
 
             Case "pickup"
-                If currentRoom = "Room1" AndAlso Not inventory.Contains("flamethrower 🔥🔫") Then
-                    inventory.Add("flamethrower 🔥🔫")
-                    ResponseTextBox.Text = "You pickup the flamethrower 🔥🔫."
+                If currentRoom = "Room1" AndAlso Not inventory.Contains(Flamethrower) Then
+                    inventory.Add(Flamethrower)
+                    ResponseTextBox.Text = $"You pickup the {Flamethrower()}."
                 Else
                     ResponseTextBox.Text = "There's nothing to pick up here."
                 End If
@@ -60,19 +60,6 @@
         End Select
     End Sub
 
-    'Private Sub UpdateRoomDescription()
-
-    '    ResponseLabel.Text = String.Empty
-
-    '    Select Case currentRoom
-    '        Case "Room1"
-    '            Dim itemText As String = If(inventory.Contains("flamethrower"), "", "There is a flamethrower 🔥🔫 here. ")
-    '            ResponseLabel.Text &= vbCrLf & $"You are in Room 1. {itemText}There is a door leading to Room 2."
-
-    '        Case "Room2"
-    '            ResponseLabel.Text &= vbCrLf & "You are in Room 2. There is a door leading back to Room 1."
-    '    End Select
-    'End Sub
     Private Sub UpdateRoomDescription()
         ResponseTextBox.Text = DescribeRoom(currentRoom)
     End Sub
@@ -90,8 +77,8 @@
         Select Case roomName
             Case "Room1"
                 lines.Add("You are in Room 1.")
-                If Not inventory.Contains("flamethrower 🔥🔫") Then
-                    lines.Add("There is a flamethrower 🔥🔫 here.")
+                If Not inventory.Contains(Flamethrower) Then
+                    lines.Add($"There is a {Flamethrower()} here.")
                 End If
                 lines.Add("There is a door leading to Room 2.")
 
@@ -105,6 +92,11 @@
 
         Return String.Join(vbCrLf, lines)
     End Function
+
+    Private Function Flamethrower() As String
+        Return "flamethrower 🔥🔫"
+    End Function
+
 End Class
 
 
