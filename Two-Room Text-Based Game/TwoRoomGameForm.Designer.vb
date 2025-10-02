@@ -23,45 +23,44 @@ Partial Class TwoRoomGameForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         RunButton = New Button()
-        ResponseLabel = New Label()
         CommandTextBox = New TextBox()
+        ResponseTextBox = New TextBox()
         SuspendLayout()
         ' 
         ' RunButton
         ' 
         RunButton.Font = New Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        RunButton.Location = New Point(614, 239)
+        RunButton.Location = New Point(616, 397)
         RunButton.Name = "RunButton"
         RunButton.Size = New Size(148, 71)
         RunButton.TabIndex = 0
         RunButton.Text = "Run"
         RunButton.UseVisualStyleBackColor = True
         ' 
-        ' ResponseLabel
-        ' 
-        ResponseLabel.AutoSize = True
-        ResponseLabel.Font = New Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        ResponseLabel.Location = New Point(100, 127)
-        ResponseLabel.Name = "ResponseLabel"
-        ResponseLabel.Size = New Size(239, 65)
-        ResponseLabel.TabIndex = 1
-        ResponseLabel.Text = "Response:"
-        ' 
         ' CommandTextBox
         ' 
         CommandTextBox.Font = New Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        CommandTextBox.Location = New Point(100, 239)
+        CommandTextBox.Location = New Point(48, 397)
         CommandTextBox.Name = "CommandTextBox"
         CommandTextBox.Size = New Size(472, 71)
         CommandTextBox.TabIndex = 2
+        ' 
+        ' ResponseTextBox
+        ' 
+        ResponseTextBox.Font = New Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        ResponseTextBox.Location = New Point(48, 55)
+        ResponseTextBox.Multiline = True
+        ResponseTextBox.Name = "ResponseTextBox"
+        ResponseTextBox.Size = New Size(1018, 311)
+        ResponseTextBox.TabIndex = 3
         ' 
         ' TwoRoomGameForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1904, 1041)
+        Controls.Add(ResponseTextBox)
         Controls.Add(CommandTextBox)
-        Controls.Add(ResponseLabel)
         Controls.Add(RunButton)
         Name = "TwoRoomGameForm"
         Text = "Two Room Game"
@@ -70,7 +69,7 @@ Partial Class TwoRoomGameForm
     End Sub
 
     Friend WithEvents RunButton As Button
-    Friend WithEvents ResponseLabel As Label
     Friend WithEvents CommandTextBox As TextBox
+    Friend WithEvents ResponseTextBox As TextBox
 
 End Class

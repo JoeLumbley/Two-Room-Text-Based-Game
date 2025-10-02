@@ -19,18 +19,18 @@
             Case "go to room2"
                 If currentRoom = "Room1" Then
                     currentRoom = "Room2"
-                    ResponseLabel.Text = "You move to Room 2."
+                    ResponseTextBox.Text = "You move to Room 2."
                 Else
-                    ResponseLabel.Text = "You're already in Room 2."
+                    ResponseTextBox.Text = "You're already in Room 2."
                 End If
                 UpdateRoomDescription()
 
             Case "go to room1"
                 If currentRoom = "Room2" Then
                     currentRoom = "Room1"
-                    ResponseLabel.Text = "You move to Room 1."
+                    ResponseTextBox.Text = "You move to Room 1."
                 Else
-                    ResponseLabel.Text = "You're already in Room 1."
+                    ResponseTextBox.Text = "You're already in Room 1."
                 End If
                 UpdateRoomDescription()
 
@@ -38,25 +38,25 @@
                 UpdateRoomDescription()
 
             Case "help"
-                ResponseLabel.Text = "Try: go to room1, go to room2, look around, help, pickup, inventory"
+                ResponseTextBox.Text = "Try: go to room1, go to room2, look around, help, pickup, inventory"
 
             Case "pickup"
                 If currentRoom = "Room1" AndAlso Not inventory.Contains("flamethrower 🔥🔫") Then
                     inventory.Add("flamethrower 🔥🔫")
-                    ResponseLabel.Text = "You pickup the flamethrower 🔥🔫."
+                    ResponseTextBox.Text = "You pickup the flamethrower 🔥🔫."
                 Else
-                    ResponseLabel.Text = "There's nothing to pick up here."
+                    ResponseTextBox.Text = "There's nothing to pick up here."
                 End If
 
             Case "inventory"
                 If inventory.Count = 0 Then
-                    ResponseLabel.Text = "Your inventory is empty."
+                    ResponseTextBox.Text = "Your inventory is empty."
                 Else
-                    ResponseLabel.Text = "You have: " & String.Join(", ", inventory)
+                    ResponseTextBox.Text = "You have: " & String.Join(", ", inventory)
                 End If
 
             Case Else
-                ResponseLabel.Text = "I don’t understand that command, but I believe you'll figure it out! 💡"
+                ResponseTextBox.Text = "I don’t understand that command, but I believe you'll figure it out! 💡"
         End Select
     End Sub
 
@@ -74,7 +74,7 @@
     '    End Select
     'End Sub
     Private Sub UpdateRoomDescription()
-        ResponseLabel.Text = DescribeRoom(currentRoom)
+        ResponseTextBox.Text = DescribeRoom(currentRoom)
     End Sub
     Private Sub CommandTextBox_KeyDown(sender As Object, e As KeyEventArgs) Handles CommandTextBox.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -90,7 +90,7 @@
         Select Case roomName
             Case "Room1"
                 lines.Add("You are in Room 1.")
-                If Not inventory.Contains("flamethrower") Then
+                If Not inventory.Contains("flamethrower 🔥🔫") Then
                     lines.Add("There is a flamethrower 🔥🔫 here.")
                 End If
                 lines.Add("There is a door leading to Room 2.")
