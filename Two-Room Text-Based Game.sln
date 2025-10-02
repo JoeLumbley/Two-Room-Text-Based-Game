@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Two-Room Text-Based Game", "Two-Room Text-Based Game\Two-Room Text-Based Game.vbproj", "{7A913E5E-E503-48BE-B5AA-1AA61A50E000}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A913E5E-E503-48BE-B5AA-1AA61A50E000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A913E5E-E503-48BE-B5AA-1AA61A50E000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A913E5E-E503-48BE-B5AA-1AA61A50E000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A913E5E-E503-48BE-B5AA-1AA61A50E000}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ADEB4D30-DF3D-4F00-A22F-FE67188526C4}
+	EndGlobalSection
+EndGlobal
