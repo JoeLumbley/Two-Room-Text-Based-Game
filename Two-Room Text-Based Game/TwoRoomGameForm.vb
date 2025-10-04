@@ -27,10 +27,11 @@ Public Class TwoRoomGameForm
     Private currentRoom As String
     Private inventory As New List(Of String)
     Private Const Flamethrower As String = "flamethrower 🔥🔫"
+    Private Const Monster As String = "grumpy monster 👹"
 
-    Private Enum Items
-        Flamethrower
-    End Enum
+    'Private Enum Items
+    '    Flamethrower
+    'End Enum
 
     Private Sub TwoRoomGameForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         currentRoom = "Room1"
@@ -94,6 +95,21 @@ Public Class TwoRoomGameForm
                     ResponseTextBox.Text = "You have: " & String.Join(", ", inventory)
                 End If
 
+            Case "fight"
+                If inventory.Contains(Flamethrower) Then
+                    If currentRoom = "Room2" Then
+                        ResponseTextBox.Text = "You use the flamethrower to scare away the grumpy monster! You win! 🎉"
+                        inventory.Remove(Flamethrower)
+                    Else
+                        ResponseTextBox.Text = "There's nothing to use the flamethrower on here."
+                    End If
+                Else
+                    ResponseTextBox.Text = "You don't have a flamethrower to use."
+                End If
+
+
+
+
             Case Else
 
                 ResponseTextBox.Text = "I don’t understand that command, but I believe you'll figure it out! 💡"
@@ -126,6 +142,7 @@ Public Class TwoRoomGameForm
 
             Case "Room2"
                 lines.Add("You are in Room 2.")
+                lines.Add($"A {Monster} is lurking in the corner!")
                 lines.Add("There is a door leading back to Room 1.")
 
             Case Else
