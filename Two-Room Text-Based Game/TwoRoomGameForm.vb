@@ -76,7 +76,7 @@ Public Class TwoRoomGameForm
 
             Case "help"
 
-                ResponseTextBox.Text = "Try: goto room 1, goto room 2, look around, help, pickup, inventory"
+                ResponseTextBox.Text = "Try: goto room 1, goto room 2, look around, help, pickup, inventory, fight"
 
             Case "pickup"
 
