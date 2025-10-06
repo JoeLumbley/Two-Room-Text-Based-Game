@@ -32,12 +32,17 @@ Public Class TwoRoomGameForm
     Private Sub TwoRoomGameForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         currentRoom = "Room1"
         UpdateRoomDescription()
+        CommandTextBox.Focus()
     End Sub
 
     Private Sub RunButton_Click(sender As Object, e As EventArgs) Handles RunButton.Click
+
         Dim command As String = CommandTextBox.Text.Trim().ToLower()
+
         CommandTextBox.Clear()
+
         ProcessCommand(command)
+
     End Sub
 
     Private Sub ProcessCommand(command As String)

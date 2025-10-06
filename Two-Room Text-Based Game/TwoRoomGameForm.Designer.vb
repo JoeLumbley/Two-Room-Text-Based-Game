@@ -36,7 +36,7 @@ Partial Class TwoRoomGameForm
         RunButton.Margin = New Padding(3, 4, 3, 4)
         RunButton.Name = "RunButton"
         RunButton.Size = New Size(169, 95)
-        RunButton.TabIndex = 0
+        RunButton.TabIndex = 1
         RunButton.Text = "Run"
         RunButton.UseVisualStyleBackColor = True
         ' 
@@ -49,7 +49,7 @@ Partial Class TwoRoomGameForm
         CommandTextBox.Margin = New Padding(3, 4, 3, 4)
         CommandTextBox.Name = "CommandTextBox"
         CommandTextBox.Size = New Size(539, 87)
-        CommandTextBox.TabIndex = 2
+        CommandTextBox.TabIndex = 0
         ' 
         ' ResponseTextBox
         ' 
@@ -61,7 +61,7 @@ Partial Class TwoRoomGameForm
         ResponseTextBox.Multiline = True
         ResponseTextBox.Name = "ResponseTextBox"
         ResponseTextBox.Size = New Size(1163, 413)
-        ResponseTextBox.TabIndex = 3
+        ResponseTextBox.TabIndex = 2
         ' 
         ' TwoRoomGameForm
         ' 
