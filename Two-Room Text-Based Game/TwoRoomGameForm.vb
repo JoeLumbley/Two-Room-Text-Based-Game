@@ -29,10 +29,6 @@ Public Class TwoRoomGameForm
     Private Const Flamethrower As String = "flamethrower 🔥🔫"
     Private Const Monster As String = "grumpy monster 👹"
 
-    'Private Enum Items
-    '    Flamethrower
-    'End Enum
-
     Private Sub TwoRoomGameForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         currentRoom = "Room1"
         UpdateRoomDescription()
@@ -106,9 +102,6 @@ Public Class TwoRoomGameForm
                 Else
                     ResponseTextBox.Text = "You don't have a flamethrower to use."
                 End If
-
-
-
 
             Case Else
 
